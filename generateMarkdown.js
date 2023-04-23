@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+//ODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
 
@@ -14,7 +14,47 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-`;
+  ${Response.title}
+
+  # Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+
+  ${Response.userName}
+  ## User Name
+
+  ${Response.Description}
+  ## Description
+
+  ${Response.Installation}
+  ## Installation
+
+  ${Response.Usage}
+  ## Usage
+
+  ${Response.Licenses}
+  ## Licenses
+
+  ${Response.Contribution}
+  ## Contribution
+
+  ${Response.Test}
+  ## Test
+
+
+
+
+
+
+
+
+  `;
 }
 
 module.exports = generateMarkdown;

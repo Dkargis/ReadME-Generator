@@ -1,8 +1,12 @@
 // TODO: Include packages needed for this application
+const fs = require("fs");
+const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
 const questions = [
-    {   
+  
+
+{   
     message: "What is the name of the project?",
     name: "title"
 },
@@ -46,11 +50,21 @@ const questions = [
     message: "Please provide a profile picture",
     name: "GitHub profile picture"
 }
-
 ];
 // TODO: Create a function to write README file
 
-function writeToFile(fileName, data) {}
+function writeToFile() {
+    inquirer.prompt(questions)
+    .then((inquirerResponse, data) => {   
+        console.log("Making ReadMe");
+        fs.writeFileSync("ReadMe.md", inquirerResponse, data);
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
+
+writeToFile();
 
 // TODO: Create a function to initialize app
 function init() {}
