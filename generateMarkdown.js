@@ -45,26 +45,31 @@ function generateMarkdown(data) {
   * [Questions](#questions)
   
 
-  ${data.userName}
-  ## User Name
-
-  ${data.description}
+  
   ## Description
-
-  ${data.installation}
+  ${data.description}
+  
   ## Installation
-
-  ${data.usage}
+  ${data.installation}
+  
   ## Usage
-
-${renderLicenseSection(data.license)}
+  ${data.usage}
+  
   ## License
-
-  ${data.contribution}
+  ${renderLicenseSection(data.license)}
+  
   ## Contribution
-
+  ${data.contribution}
+  
+  ## Tests
   ${data.test}
-  ## Test
+
+  ## Questions
+  ${"https://github.com/" + data.userName}
+
+
+  ${data.email}
+
   `;
 }
 
