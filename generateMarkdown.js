@@ -1,5 +1,6 @@
 //ODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// The License badge is the link so I took out the generate link function
 function renderLicenseBadge(license) {
   if (license === "MIT") 
     {return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"}
@@ -14,7 +15,16 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === "MIT") 
+    {return "The MIT License is a permissive open-source software license that allows users to use, modify, and distribute the software with very few restrictions, including the right to use the software for commercial purposes. It is one of the most popular and widely used open-source licenses."}
+  else if (license === "Apache")
+    {return "The Apache License is a permissive free software license written by the Apache Software Foundation (ASF). The Apache License requires preservation of the copyright and"}
+  else if (license === "GPLv2")
+    {return "The GNU General Public License (GNU GPL or simply GPL) is a series of widely used free software licenses that guarantee end users the freedom to run, study, share, and modify the software. The licenses were originally written by Richard Stallman, former head of the Free Software Foundation (FSF), for the GNU Project, and grant the recipients of a computer program the rights of the Free Software Definition."}
+  else if (license === "Unlicense")
+    {return "The Unlicense is a public domain dedication intended to provide a template for disclaiming copyright"}
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -47,7 +57,7 @@ function generateMarkdown(data) {
   ${data.usage}
   ## Usage
 
-${data.license}
+${renderLicenseSection(data.license)}
   ## License
 
   ${data.contribution}
