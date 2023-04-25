@@ -1,10 +1,16 @@
 //ODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === "MIT") 
+    {return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"}
+  else if (license === "Apache")
+    {return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"}
+  else if (license === "GPLv2")
+    {return "[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)"}
+  else if (license === "Unlicense")
+    {return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -14,7 +20,10 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ${Response.title}
+  ${data.title}
+
+  ${renderLicenseBadge(data.license)}
+
 
   # Table of Contents
   * [Description](#description)
@@ -26,34 +35,26 @@ function generateMarkdown(data) {
   * [Questions](#questions)
   
 
-  ${Response.userName}
+  ${data.userName}
   ## User Name
 
-  ${Response.Description}
+  ${data.description}
   ## Description
 
-  ${Response.Installation}
+  ${data.installation}
   ## Installation
 
-  ${Response.Usage}
+  ${data.usage}
   ## Usage
 
-  ${Response.Licenses}
-  ## Licenses
+${data.license}
+  ## License
 
-  ${Response.Contribution}
+  ${data.contribution}
   ## Contribution
 
-  ${Response.Test}
+  ${data.test}
   ## Test
-
-
-
-
-
-
-
-
   `;
 }
 
